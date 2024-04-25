@@ -1,30 +1,33 @@
 package lk.ijse.helloshoeshop.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lk.ijse.helloshoeshop.Enum.PaymentMethod;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
-@Table(name = "order")
-@RequiredArgsConstructor
-public class OrderEntity implements SuperEntity{
+@Table(name = "Orders")
+public class OrderEntity {
     @Id
-    private String orderId;
-    private String customerName;
-    private double addedPoint;
-    private double totalPrice;
-    private String paymentMethod;
-    private Timestamp purchaseDate;
-    private String cashierName;
+    private String orderNo;
+    private Timestamp purchasedDate;
+    private int addedPoints;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
+
     @ManyToOne
-    private UserEntity user;
+    @JoinColumn(name = "cutomerId",nullable = false)
+    private CustomerEntity customerEntity;
+
     @ManyToOne
-    private CustomerEntity customer;
+    @JoinColumn(name = "email",nullable = false)
+    private UserEntity userEntity;
+
+    @OneToMany(mappedBy = "orderEntity",cascade = CascadeType.ALL)
+    private List<StockSizeOrderDetailsEntity> stockSizeOrderDetailsEntities ;
 }
