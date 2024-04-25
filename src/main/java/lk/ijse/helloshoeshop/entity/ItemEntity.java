@@ -15,18 +15,18 @@ public class ItemEntity {
     @Enumerated(EnumType.STRING)
     private Status status;
     @ManyToOne
-    @JoinColumn(name = "genderCode", nullable = false)
+    @JoinColumn(name = "genderCode",nullable = false)
     private GenderEntity genderEntity;
 
     @ManyToOne
-    @JoinColumn(name = "occasionCode", nullable = false)
+    @JoinColumn(name = "occasionCode",nullable = false)
     private OccasionEntity occasionEntity;
 
     @ManyToOne
-    @JoinColumn(name = "varietyCode", nullable = false)
+    @JoinColumn(name = "varietyCode",nullable = false)
     private VarietyEntity varietyEntity;
 
-    @OneToMany(mappedBy = "itemEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "itemEntity",cascade = CascadeType.ALL)
     private List<StockEntity> stockEntities;
 
 }

@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "Returns")
+@Table (name = "Returns")
 public class ReturnEntity {
     @Id
     private String returnId;

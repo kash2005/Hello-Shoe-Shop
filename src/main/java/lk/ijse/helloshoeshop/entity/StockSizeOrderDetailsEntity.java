@@ -3,7 +3,7 @@ package lk.ijse.helloshoeshop.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "StockSizeOrderDetails")
+@Table (name = "StockSizeOrderDetails")
 public class StockSizeOrderDetailsEntity {
     @Id
     private String stockSizeOrderDetailsId;

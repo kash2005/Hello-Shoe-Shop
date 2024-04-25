@@ -11,21 +11,25 @@ import java.sql.Timestamp;
 import java.util.List;
 
 
-@RequiredArgsConstructor
 @Entity
-@Table(name="customer")
+@Table(name = "customer")
 @Data
-public class CustomerEntity implements SuperEntity{
+public class CustomerEntity {
+
     @Id
     private String customerId;
+
     private String customerName;
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
     @Enumerated(EnumType.STRING)
     private Level level;
+
     @Temporal(TemporalType.DATE)
     private Date joinDate;
     private Integer totalPoint;
+
     @Temporal(TemporalType.DATE)
     private Date dob;
     private String address1;
@@ -36,6 +40,8 @@ public class CustomerEntity implements SuperEntity{
     private String contactNo;
     private String email;
     private Timestamp recentPurchasedDate;
-    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-    private List<OrderEntity> orders;
+
+    @OneToMany(mappedBy = "customerEntity",cascade = CascadeType.ALL)
+    private List<OrderEntity> orderEntities;
+
 }

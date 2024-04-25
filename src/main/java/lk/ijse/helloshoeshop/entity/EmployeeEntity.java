@@ -8,8 +8,8 @@ import lombok.RequiredArgsConstructor;
 import java.sql.Date;
 
 @Entity
-@Table(name = "employee")
-public class EmployeeEntity implements SuperEntity{
+@Table (name = "Employee")
+public class EmployeeEntity {
     @Id
     private String employeeCode;
     private String employeeName;

@@ -6,7 +6,7 @@ import java.sql.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "Stock")
+@Table (name = "Stock")
 public class StockEntity {
 
     @Id
