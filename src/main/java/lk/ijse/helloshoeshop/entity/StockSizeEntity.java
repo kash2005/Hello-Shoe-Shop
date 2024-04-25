@@ -1,4 +1,4 @@
 package lk.ijse.helloshoeshop.entity;
 
-public class SupplyEntity {
+public class StockSizeEntity {
 }
