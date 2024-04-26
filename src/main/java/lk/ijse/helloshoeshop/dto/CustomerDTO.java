@@ -25,6 +25,7 @@ public class CustomerDTO implements SuperEntity {
     @NotNull(message = "Gender cannot be null")
     private Gender gender;
 
+    @NotNull(message = "Level cannot be null")
     private Level level;
 
     @NotNull(message = "Join date cannot be null")
