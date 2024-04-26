@@ -2,11 +2,13 @@ package lk.ijse.helloshoeshop.entity;
 
 import jakarta.persistence.*;
 import lk.ijse.helloshoeshop.Enum.Category;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
 @Table(name = "Supplier")
+@Data
 public class SupplierEntity {
 
     @Id
