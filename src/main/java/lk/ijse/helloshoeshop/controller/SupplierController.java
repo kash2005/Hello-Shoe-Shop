@@ -63,4 +63,18 @@ public class SupplierController {
                     .body("Supplier Details fetched suuccessfully.\nMore details.\n"+exception);
         }
     }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<?> deleteSupplier(@PathVariable String id){
+        try {
+            supplierService.deleteSupplier(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Supplier Deleted Successfully.");
+        }catch (NotFoundException notFoundException){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Supplier Not Found.");
+        }catch (Exception exception){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Supplier Deleted Unsuccessfully.\nMore details.\n"+exception);
+        }
+    }
 }

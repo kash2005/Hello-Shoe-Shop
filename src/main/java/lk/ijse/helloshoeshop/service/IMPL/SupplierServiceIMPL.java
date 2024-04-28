@@ -41,7 +41,8 @@ public class SupplierServiceIMPL implements SupplierService {
 
     @Override
     public void deleteSupplier(String id) {
-
+        if (!supplierServiceDAO.existsById(id)) throw new NotFoundException("Supplier not found");
+        supplierServiceDAO.deleteById(id);
     }
 
     @Override
