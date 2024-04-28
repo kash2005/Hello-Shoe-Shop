@@ -9,6 +9,6 @@ public interface SupplierService {
     void saveSupplier(SupplierDTO supplierDTO);
     void updateSupplier(String id,SupplierDTO supplierDTO);
     void deleteSupplier(String id);
-    SupplierDTO getCustomer(String id);
+    SupplierDTO getSupplier(String id);
     List<SupplierDTO> getAllSuppliers();
 }

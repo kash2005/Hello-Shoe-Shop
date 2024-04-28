@@ -14,6 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "customer")
 @Data
+@RequiredArgsConstructor
 public class CustomerEntity {
 
     @Id

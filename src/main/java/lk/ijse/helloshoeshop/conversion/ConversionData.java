@@ -31,5 +31,19 @@ public class ConversionData {
         return modelMapper.map(customerDtos,List.class);
     }
 
+    public SupplierDTO convertToSupplierDTO(Optional<SupplierEntity> supplierEntity){
+        return modelMapper.map(supplierEntity, SupplierDTO.class);
+    }
 
+    public SupplierEntity convertToSupplierEntity(Optional<SupplierDTO> supplierDTO){
+        return modelMapper.map(supplierDTO, SupplierEntity.class);
+    }
+
+    public List<SupplierDTO> getSupplierDTOList(List<SupplierEntity> supplierEntities){
+        return modelMapper.map(supplierEntities,List.class);
+    }
+
+    public List<SupplierEntity> getSupplierEntityList(List<SupplierDTO> supplierDTOS){
+        return modelMapper.map(supplierDTOS,List.class);
+    }
 }
