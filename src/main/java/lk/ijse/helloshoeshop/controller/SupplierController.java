@@ -77,4 +77,19 @@ public class SupplierController {
                     .body("Supplier Deleted Unsuccessfully.\nMore details.\n"+exception);
         }
     }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> updateSupplier(@Validated @RequestBody SupplierDTO supplierDTO,
+                                                    BindingResult bindingResult,@PathVariable ("id") String id){
+        try {
+            supplierService.updateSupplier(id, supplierDTO);
+            return ResponseEntity.status(HttpStatus.OK).body("Supplier Updated Successfully.");
+        }catch (NotFoundException notFoundException){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Supplier Not Found.");
+        }catch (Exception exception){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Supplier Updated Unsuccessfully.\nMore details.\n"+exception);
+        }
+    }
 }
