@@ -52,6 +52,6 @@ public class SupplierServiceIMPL implements SupplierService {
 
     @Override
     public List<SupplierDTO> getAllSuppliers() {
-        return null;
+        return conversionData.getSupplierDTOList(supplierServiceDAO.findAll());
     }
 }

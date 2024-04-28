@@ -54,4 +54,13 @@ public class SupplierController {
         }
     }
 
+    @GetMapping(produces = "application/json")
+    public ResponseEntity<?> getAllSuppliers(){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(supplierService.getAllSuppliers());
+        }catch (Exception exception){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Supplier Details fetched suuccessfully.\nMore details.\n"+exception);
+        }
+    }
 }
