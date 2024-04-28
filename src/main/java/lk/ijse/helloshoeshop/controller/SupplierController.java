@@ -42,4 +42,16 @@ public class SupplierController {
         }
     }
 
+    @GetMapping(value = "/{id}",produces = "application/json")
+    public ResponseEntity<?> getSupplier(@PathVariable String id){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(supplierService.getSupplier(id));
+        }catch (NotFoundException notFoundException){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Supplier Not Found");
+        }catch (Exception exception){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Supplier Details fetched suuccessfully.\nMore details.\n"+exception);
+        }
+    }
+
 }

@@ -46,7 +46,8 @@ public class SupplierServiceIMPL implements SupplierService {
 
     @Override
     public SupplierDTO getSupplier(String id) {
-        return null;
+        if (!supplierServiceDAO.existsById(id)) throw new NotFoundException("Supplier not found");
+        return conversionData.convertToSupplierDTO(supplierServiceDAO.findById(id));
     }
 
     @Override
