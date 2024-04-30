@@ -1,8 +1,10 @@
 package lk.ijse.helloshoeshop.conversion;
 
 import lk.ijse.helloshoeshop.dto.CustomerDTO;
+import lk.ijse.helloshoeshop.dto.EmployeeDTO;
 import lk.ijse.helloshoeshop.dto.SupplierDTO;
 import lk.ijse.helloshoeshop.entity.CustomerEntity;
+import lk.ijse.helloshoeshop.entity.EmployeeEntity;
 import lk.ijse.helloshoeshop.entity.SupplierEntity;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -45,5 +47,24 @@ public class ConversionData {
 
     public List<SupplierEntity> getSupplierEntityList(List<SupplierDTO> supplierDTOS){
         return modelMapper.map(supplierDTOS,List.class);
+    }
+    public EmployeeDTO convertToEmployeeDTO(Optional<SupplierEntity> employeeEntity){
+        return modelMapper.map(employeeEntity, EmployeeDTO.class);
+    }
+
+    public EmployeeEntity convertToEmployeeEntity(Optional<EmployeeDTO> employeeDTO){
+        return modelMapper.map(employeeDTO, EmployeeEntity.class);
+    }
+
+    public List<EmployeeDTO> getEmployeeDTOList(List<EmployeeEntity> employeeEntities){
+        return modelMapper.map(employeeEntities,List.class);
+    }
+
+    public List<EmployeeEntity> getEmployeeEntityList(List<EmployeeDTO> employeeDTOS){
+        return modelMapper.map(employeeDTOS,List.class);
+    }
+
+    public EmployeeDTO getEmployeeDTO(Optional<EmployeeEntity> employeeEntity) {
+        return modelMapper.map(employeeEntity, EmployeeDTO.class);
     }
 }

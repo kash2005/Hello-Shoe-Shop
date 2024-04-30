@@ -17,7 +17,7 @@ public class EmployeeDTO implements SuperDTO{
     @NotBlank(message = "Employee name cannot be blank")
     @Size(min = 2, max = 50, message = "Employee name must be between 2 and 50 characters")
     private String employeeName;
-    @NotBlank(message = "Pro picture  cannot be blank")
+//    @NotBlank(message = "Pro picture  cannot be blank")
     private String profilePic;
     @NotNull(message = "Gender cannot be null")
     private Gender gender;

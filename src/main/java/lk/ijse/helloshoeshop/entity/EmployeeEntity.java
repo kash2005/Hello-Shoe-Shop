@@ -3,16 +3,19 @@ package lk.ijse.helloshoeshop.entity;
 import jakarta.persistence.*;
 import lk.ijse.helloshoeshop.Enum.Gender;
 import lk.ijse.helloshoeshop.Enum.Role;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import java.sql.Date;
 
 @Entity
 @Table (name = "Employee")
+@Data
 public class EmployeeEntity {
     @Id
     private String employeeCode;
     private String employeeName;
+    @Column(columnDefinition = "LONGTEXT")
     private String profilePic;
 
     @Enumerated(EnumType.STRING)
