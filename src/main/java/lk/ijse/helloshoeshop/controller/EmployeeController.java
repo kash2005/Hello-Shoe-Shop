@@ -60,7 +60,7 @@ public class EmployeeController {
 
     @GetMapping(value = "/getEmployees")
     public Iterable<EmployeeDTO> getAllEmployee(){
-        return employeeService.getAllEmployee();
+        return employeeService.getAllEmployees();
     }
 
     public static String convertBase64(String data){

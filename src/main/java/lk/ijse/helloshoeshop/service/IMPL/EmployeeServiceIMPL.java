@@ -44,11 +44,13 @@ public class EmployeeServiceIMPL implements EmployeeService {
 
     @Override
     public EmployeeDTO getEmployee(String id) {
-        return conversionData.getEmployeeDTO(Optional.ofNullable(employeeServiceDAO.findById(id).orElse(null)));
+        return null;
     }
 
     @Override
-    public Iterable<EmployeeDTO> getAllEmployee() {
-        return conversionData.getEmployeeDTOList(employeeServiceDAO.findAll());
+    public List<EmployeeDTO> getAllEmployees() {
+        return null;
     }
+
+
 }

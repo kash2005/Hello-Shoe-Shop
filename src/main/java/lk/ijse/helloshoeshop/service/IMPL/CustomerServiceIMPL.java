@@ -9,7 +9,6 @@ import lk.ijse.helloshoeshop.exception.NotFoundException;
 import lk.ijse.helloshoeshop.repository.CustomerServiceDAO;
 import lk.ijse.helloshoeshop.service.CustomerService;
 import lombok.AllArgsConstructor;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -3,9 +3,11 @@ package lk.ijse.helloshoeshop.conversion;
 import lk.ijse.helloshoeshop.dto.CustomerDTO;
 import lk.ijse.helloshoeshop.dto.EmployeeDTO;
 import lk.ijse.helloshoeshop.dto.SupplierDTO;
+import lk.ijse.helloshoeshop.dto.UserDTO;
 import lk.ijse.helloshoeshop.entity.CustomerEntity;
 import lk.ijse.helloshoeshop.entity.EmployeeEntity;
 import lk.ijse.helloshoeshop.entity.SupplierEntity;
+import lk.ijse.helloshoeshop.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -48,7 +50,7 @@ public class ConversionData {
     public List<SupplierEntity> getSupplierEntityList(List<SupplierDTO> supplierDTOS){
         return modelMapper.map(supplierDTOS,List.class);
     }
-    public EmployeeDTO convertToEmployeeDTO(Optional<SupplierEntity> employeeEntity){
+    public EmployeeDTO convertToEmployeeDTO(Optional<EmployeeEntity> employeeEntity){
         return modelMapper.map(employeeEntity, EmployeeDTO.class);
     }
 
@@ -64,7 +66,11 @@ public class ConversionData {
         return modelMapper.map(employeeDTOS,List.class);
     }
 
-    public EmployeeDTO getEmployeeDTO(Optional<EmployeeEntity> employeeEntity) {
-        return modelMapper.map(employeeEntity, EmployeeDTO.class);
+    public UserEntity convertToUserEntity(UserDTO userDTO){
+        return modelMapper.map(userDTO, UserEntity.class);
+    }
+
+    public UserDTO convertToUserDTO(UserEntity userEntity){
+        return modelMapper.map(userEntity, UserDTO.class);
     }
 }
