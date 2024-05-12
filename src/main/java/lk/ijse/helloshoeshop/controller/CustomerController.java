@@ -1,6 +1,8 @@
 package lk.ijse.helloshoeshop.controller;
 
+import lk.ijse.helloshoeshop.Enum.Gender;
 import lk.ijse.helloshoeshop.dto.CustomerDTO;
+import lk.ijse.helloshoeshop.dto.EmployeeDTO;
 import lk.ijse.helloshoeshop.exception.NotFoundException;
 import lk.ijse.helloshoeshop.service.CustomerService;
 import lombok.AllArgsConstructor;
@@ -8,8 +10,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/v1/customer")

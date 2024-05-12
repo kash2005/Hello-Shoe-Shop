@@ -5,12 +5,14 @@ import lk.ijse.helloshoeshop.Enum.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.sql.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class EmployeeDTO implements SuperDTO{
     @Null(message = "Employee code generate by the program")
     private String employeeCode;

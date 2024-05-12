@@ -11,6 +11,7 @@ public class ItemEntity {
     @Id
     private String itemCode;
     private String itemDesc;
+    @Column(columnDefinition = "LONGTEXT")
     private String pic;
     @Enumerated(EnumType.STRING)
     private Status status;
